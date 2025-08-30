@@ -1,4 +1,5 @@
 # ✨ Visual Product Matcher: An AI-Powered Visual Search Engine
+
 ---
 <div align="center">
 
@@ -7,7 +8,8 @@
 ## 🔴 Live Demo
 Check out the live application here:
 
-https://your-deployed-app-url.streamlit.app/
+[https://visual-appuct-matcher-jfoyitikgqfpk7yvaktmjy.streamlit.app/](https://visual-appuct-matcher-jfoyitikgqfpk7yvaktmjy.streamlit.app/)
+
 ---
 
 ## 📜 Project Overview
@@ -19,7 +21,8 @@ This project demonstrates a complete, end-to-end implementation of a content-bas
 
 ---
 
-🚀 Key Features
+## 🚀 Key Features
+
 🖼️ Dual Input Methods: Users can either upload an image file directly or paste a URL to an image on the web.
 
 🧠 Deep Learning Backend: Utilizes the powerful VGG16 convolutional neural network to extract high-level feature vectors from images.
@@ -29,9 +32,11 @@ This project demonstrates a complete, end-to-end implementation of a content-bas
 🎨 Dynamic & Interactive UI: A modern and responsive user interface built with Streamlit, featuring real-time previews and adjustable search parameters.
 
 ☁️ Scalable Architecture: Designed to work with remote image URLs stored in a CSV, making it easy to scale the product catalog without local storage.
+
 ---
 
 ## 💡 Problem-Solving & Architecture
+
 The core challenge is to quantify "visual similarity". My approach breaks this down into three main steps:
 
 ### 1️⃣ Feature Extraction (Image ➝ Vector)  
@@ -61,7 +66,6 @@ The core challenge is to quantify "visual similarity". My approach breaks this d
 
 ---
 
-
 ## 📂 Project Structure  
 
 ```bash
@@ -73,7 +77,9 @@ The core challenge is to quantify "visual similarity". My approach breaks this d
 ```
 
 ---
-🖥️ Running the Project Locally
+
+##🖥️ Running the Project Locally
+
 Clone the repository:
 ```bash
 git clone [https://github.com/myselfshikhar/Visual-Product-Matcher.git](https://github.com/myselfshikhar/Visual-Product-Matcher.git)
