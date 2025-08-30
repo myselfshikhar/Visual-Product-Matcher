@@ -30,44 +30,45 @@ This project demonstrates a complete, end-to-end implementation of a content-bas
 ☁️ Scalable Architecture: Designed to work with remote image URLs stored in a CSV, making it easy to scale the product catalog without local storage.
 ---
 
-💡 Problem-Solving & Architecture
+## 💡 Problem-Solving & Architecture
 The core challenge is to quantify "visual similarity". My approach breaks this down into three main steps:
 
-Feature Extraction (Image to Vector):
+### 1️⃣ Feature Extraction (Image ➝ Vector)  
 
-An image is represented as a meaningful set of numbers (a feature vector) using the VGG16 model. This vector captures textures, patterns, shapes, and colors.
+- An image is represented as a meaningful set of numbers (a feature vector) using the VGG16 model. This vector captures textures, patterns, shapes, and colors.
 
-Indexing for Fast Retrieval:
+### 2️⃣ Fast Retrieval (Indexing)  
 
-To avoid slow, sequential searches, a search index is built using scikit-learn's NearestNeighbors. This pre-organizes all vectors for optimized, high-speed lookups.
+- To avoid slow, sequential searches, a search index is built using scikit-learn's NearestNeighbors. This pre-organizes all vectors for optimized, high-speed lookups.
 
-Cosine Similarity is used as the distance metric, as it excels at comparing high-dimensional vectors.
+- Cosine Similarity is used as the distance metric, as it excels at comparing high-dimensional vectors.
 
-User Interface & Experience:
+### 3️⃣ User Experience  
 
-Streamlit was selected to rapidly build a beautiful and intuitive Python-based web app, guiding the user seamlessly from input to result.
+-Streamlit was selected to rapidly build a beautiful and intuitive Python-based web app, guiding the user seamlessly from input to result.
+
 ---
 
-🛠️ Tech Stack
-Backend & Logic: Python
+## 🛠️ Tech Stack  
 
-Web Framework: Streamlit
+- **Backend & Logic**: Python  
+- **Web Framework**: Streamlit  
+- **Deep Learning**: TensorFlow / Keras (VGG16)  
+- **ML & Indexing**: Scikit-learn  
+- **Data Handling**: Pandas, NumPy  
+- **Image Processing**: Pillow  
 
-Deep Learning: TensorFlow / Keras
-
-Machine Learning & Indexing: Scikit-learn
-
-Data Handling: Pandas, NumPy
-
-Image Processing: Pillow (PIL)
 ---
 
-📂 Project Structure
+
+## 📂 Project Structure  
+
+```bash
 .
-├── 📜 README.md             # This documentation file
-├── 🐍 image_search.py       # The main Streamlit application script
-├── 📋 metadata.csv          # CSV file with product info and image URLs
-└── 📦 requirements.txt      # Python dependencies for deployment
+├── 📜 README.md             # Project documentation  
+├── 🐍 image_search.py       # Main Streamlit app  
+├── 📋 metadata.csv          # Product info + image URLs  
+└── 📦 requirements.txt      # Python dependencies  
 
 ---
 🖥️ Running the Project Locally
