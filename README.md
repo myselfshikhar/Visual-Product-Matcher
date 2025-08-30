@@ -1,6 +1,8 @@
 Visual Product Matcher: An AI-Powered Visual Search Engine
- <!-- https://visual-appuct-matcher-jfoyitikgqfpk7yvaktmjy.streamlit.app/ -->
 
+
+ Deployed Link---> https://visual-appuct-matcher-jfoyitikgqfpk7yvaktmjy.streamlit.app/ 
+  
 📜 Project Overview
 The Visual Product Matcher is a sophisticated, AI-powered web application that allows users to find visually similar products from a catalog using an image. Instead of relying on text-based search, which can be ambiguous, this tool leverages the power of deep learning to understand the visual content of an image and retrieve the closest matches.
 
