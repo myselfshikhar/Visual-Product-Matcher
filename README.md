@@ -16,6 +16,7 @@ The Visual Product Matcher is a sophisticated, AI-powered web application that a
 Instead of relying on text-based search, which can be ambiguous, this tool leverages the power of deep learning to understand the visual content of an image and retrieve the closest matches.
 
 This project demonstrates a complete, end-to-end implementation of a content-based image retrieval (CBIR) system, from feature extraction with a pre-trained neural network to building a fast and efficient similarity search index. The entire application is wrapped in a sleek, interactive, and user-friendly web interface built with Streamlit.
+
 ---
 
 🚀 Key Features
@@ -68,13 +69,16 @@ The core challenge is to quantify "visual similarity". My approach breaks this d
 ├── 📜 README.md             # Project documentation  
 ├── 🐍 image_search.py       # Main Streamlit app  
 ├── 📋 metadata.csv          # Product info + image URLs  
-└── 📦 requirements.txt      # Python dependencies  
+└── 📦 requirements.txt      # Python dependencies
+```
 
 ---
 🖥️ Running the Project Locally
 Clone the repository:
 ```bash
 git clone [https://github.com/myselfshikhar/Visual-Product-Matcher.git](https://github.com/myselfshikhar/Visual-Product-Matcher.git)
+```
+```bash
 cd Visual-Product-Matcher
 ```
 
