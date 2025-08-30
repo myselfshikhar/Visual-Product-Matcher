@@ -1,23 +1,22 @@
-✨ Visual Product Matcher: An AI-Powered Visual Search Engine
+# ✨ Visual Product Matcher: An AI-Powered Visual Search Engine
+---
 <div align="center">
 
 </div>
 
-🔴 Live Demo
+## 🔴 Live Demo
 Check out the live application here:
 
 https://your-deployed-app-url.streamlit.app/
+---
 
-(Replace this URL with your actual deployed app link!)
-
-
-
-📜 Project Overview
+## 📜 Project Overview
 The Visual Product Matcher is a sophisticated, AI-powered web application that allows users to find visually similar products from a catalog using an image.
 
 Instead of relying on text-based search, which can be ambiguous, this tool leverages the power of deep learning to understand the visual content of an image and retrieve the closest matches.
 
 This project demonstrates a complete, end-to-end implementation of a content-based image retrieval (CBIR) system, from feature extraction with a pre-trained neural network to building a fast and efficient similarity search index. The entire application is wrapped in a sleek, interactive, and user-friendly web interface built with Streamlit.
+---
 
 🚀 Key Features
 🖼️ Dual Input Methods: Users can either upload an image file directly or paste a URL to an image on the web.
@@ -29,6 +28,7 @@ This project demonstrates a complete, end-to-end implementation of a content-bas
 🎨 Dynamic & Interactive UI: A modern and responsive user interface built with Streamlit, featuring real-time previews and adjustable search parameters.
 
 ☁️ Scalable Architecture: Designed to work with remote image URLs stored in a CSV, making it easy to scale the product catalog without local storage.
+---
 
 💡 Problem-Solving & Architecture
 The core challenge is to quantify "visual similarity". My approach breaks this down into three main steps:
@@ -46,6 +46,7 @@ Cosine Similarity is used as the distance metric, as it excels at comparing high
 User Interface & Experience:
 
 Streamlit was selected to rapidly build a beautiful and intuitive Python-based web app, guiding the user seamlessly from input to result.
+---
 
 🛠️ Tech Stack
 Backend & Logic: Python
@@ -59,6 +60,7 @@ Machine Learning & Indexing: Scikit-learn
 Data Handling: Pandas, NumPy
 
 Image Processing: Pillow (PIL)
+---
 
 📂 Project Structure
 .
@@ -67,21 +69,20 @@ Image Processing: Pillow (PIL)
 ├── 📋 metadata.csv          # CSV file with product info and image URLs
 └── 📦 requirements.txt      # Python dependencies for deployment
 
+---
 🖥️ Running the Project Locally
 Clone the repository:
+```bash
+git clone [https://github.com/myselfshikhar/Visual-Product-Matcher.git](https://github.com/myselfshikhar/Visual-Product-Matcher.git)
+cd Visual-Product-Matcher
+```
 
-git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
-cd your-repo-name
-
-(Recommended) Create a virtual environment:
-
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 Install the required packages:
-
+```bash
 pip install -r requirements.txt
-
+```
 Run the Streamlit app:
-
+```bash
 streamlit run image_search.py
+```
