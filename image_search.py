@@ -101,11 +101,14 @@ def preprocess_image(pil_img):
     arr = keras.applications.vgg16.preprocess_input(arr)
     return arr
 
-@st.cache_data
+
+# BUG FIX: Removed @st.cache_data from this function.
+# Caching this function was causing it to return the features of the PREVIOUS
+# image instead of the new one. This operation is fast enough for a single
+# image that it doesn't need to be cached.
 def extract_features(_pil_img, _model):
     """
     Extracts a feature vector from a given image using the provided model.
-    The function is cached to speed up repeated queries with the same image.
 
     Args:
         _pil_img (PIL.Image.Image): The user's input image.
