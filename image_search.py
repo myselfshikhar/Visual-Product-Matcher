@@ -305,7 +305,7 @@ def main():
     with col2:
         st.markdown("<div class='upload-section'>", unsafe_allow_html=True)
         st.subheader("Paste an Image URL")
-        url_input = st.text_input("Enter a direct link to an image", placeholder="https://...", label_visibility="collapsed")
+        url_input = st.text_input("Enter a direct link to an image", placeholder="https://example.jpg", label_visibility="collapsed")
         st.markdown("</div>", unsafe_allow_html=True)
     
     st.write("---")
@@ -374,4 +374,5 @@ def main():
 # Standard Python entry point.
 if __name__ == "__main__":
     main()
+
 
