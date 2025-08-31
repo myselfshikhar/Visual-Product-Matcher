@@ -1,68 +1,72 @@
-# ✨ Visual Product Matcher: An AI-Powered Visual Search Engine
-
----
-<div align="center">
-
-</div>
-
-## 🔴 Live Demo
-Check out the live application here:
-
-[https://visual-appuct-matcher-jfoyitikgqfpk7yvaktmjy.streamlit.app/](https://visual-appuct-matcher-jfoyitikgqfpk7yvaktmjy.streamlit.app/)
+# ✨ Visual Product Matcher  
+*An AI-Powered Visual Search Engine*  
 
 ---
 
-## 📜 Project Overview
-The Visual Product Matcher is a sophisticated, AI-powered web application that allows users to find visually similar products from a catalog using an image.
+## 🔴 Live Demo  
 
-Instead of relying on text-based search, which can be ambiguous, this tool leverages the power of deep learning to understand the visual content of an image and retrieve the closest matches.
+👉 [Check out the live application her](https://visual-appuct-matcher-jfoyitikgqfpk7yvaktmjy.streamlit.app/)  
 
-This project demonstrates a complete, end-to-end implementation of a content-based image retrieval (CBIR) system, from feature extraction with a pre-trained neural network to building a fast and efficient similarity search index. The entire application is wrapped in a sleek, interactive, and user-friendly web interface built with Streamlit.
 
 ---
 
-## 🚀 Key Features
+## 📖 Project Overview  
 
-🖼️ Dual Input Methods: Users can either upload an image file directly or paste a URL to an image on the web.
+The **Visual Product Matcher** is a sophisticated, AI-powered web application that allows users to find **visually similar products** from a catalog using an image.  
 
-🧠 Deep Learning Backend: Utilizes the powerful VGG16 convolutional neural network to extract high-level feature vectors from images.
+Instead of relying on ambiguous text-based searches, it leverages **deep learning** to analyze image content and return the closest matches within seconds.  
 
-⚡ Efficient Similarity Search: Employs a k-Nearest Neighbors (k-NN) algorithm with a cosine similarity metric to instantly find the most similar items.
-
-🎨 Dynamic & Interactive UI: A modern and responsive user interface built with Streamlit, featuring real-time previews and adjustable search parameters.
-
-☁️ Scalable Architecture: Designed to work with remote image URLs stored in a CSV, making it easy to scale the product catalog without local storage.
+This project demonstrates a complete, end-to-end **Content-Based Image Retrieval (CBIR)** system with an optimized two-stage pipeline for **performance and scalability**.  
 
 ---
 
-## 💡 Problem-Solving & Architecture
+## 💡 Architecture & Problem-Solving Approach  
 
-The core challenge is to quantify "visual similarity". My approach breaks this down into three main steps:
+### ⚙️ Stage 1: Offline Pre-computation (Heavy Lifting)  
+- **Script:** `precompute_features.py`  
+- **Steps:**  
+  - Read product catalog from `metadata.csv`  
+  - Download each image  
+  - Extract features using **VGG16** (pre-trained on ImageNet)  
+  - Save results into:  
+    - `features.npy` → pre-computed feature vectors  
+    - `image_urls.pkl` → processed image URLs  
 
-### 1️⃣ Feature Extraction (Image ➝ Vector)  
+✅ This ensures the **live app loads instantly**, without recomputation.  
 
-- An image is represented as a meaningful set of numbers (a feature vector) using the VGG16 model. This vector captures textures, patterns, shapes, and colors.
+---
 
-### 2️⃣ Fast Retrieval (Indexing)  
+### ⚡ Stage 2: Real-time Similarity Search (Live App)  
+- **Script:** `image_search.py`  
+- **Steps:**  
+  - Load pre-computed features on startup  
+  - Build a **k-Nearest Neighbors (k-NN)** index with Scikit-learn  
+  - Use **Cosine Similarity** for fast, robust comparisons  
+  - On user input (uploaded image / URL):  
+    - Extract features for query image  
+    - Retrieve top matches from the index  
+    - Display results in an **interactive Streamlit UI**  
 
-- To avoid slow, sequential searches, a search index is built using scikit-learn's NearestNeighbors. This pre-organizes all vectors for optimized, high-speed lookups.
+---
 
-- Cosine Similarity is used as the distance metric, as it excels at comparing high-dimensional vectors.
+## 🚀 Key Features  
 
-### 3️⃣ User Experience  
-
--Streamlit was selected to rapidly build a beautiful and intuitive Python-based web app, guiding the user seamlessly from input to result.
+- ⚡ **High-Performance Architecture** – Pre-computation ensures lightning-fast queries  
+- 🧠 **Deep Learning Backend** – VGG16 feature extraction  
+- 🖼️ **Dual Input Methods** – Upload file or paste image URL  
+- 🎨 **Dynamic UI** – Responsive, modern Streamlit interface  
+- ☁️ **Scalable Design** – Can handle large catalogs efficiently  
 
 ---
 
 ## 🛠️ Tech Stack  
 
-- **Backend & Logic**: Python  
-- **Web Framework**: Streamlit  
-- **Deep Learning**: TensorFlow / Keras (VGG16)  
-- **ML & Indexing**: Scikit-learn  
-- **Data Handling**: Pandas, NumPy  
-- **Image Processing**: Pillow  
+- **Backend & Logic:** Python  
+- **Framework:** Streamlit  
+- **Deep Learning:** TensorFlow / Keras  
+- **Indexing & ML:** Scikit-learn, NumPy  
+- **Data Handling:** Pandas, Pickle  
+- **Utilities:** Requests, Pillow, TQDM  
 
 ---
 
@@ -70,30 +74,47 @@ The core challenge is to quantify "visual similarity". My approach breaks this d
 
 ```bash
 .
-├── 📜 README.md             # Project documentation  
-├── 🐍 image_search.py       # Main Streamlit app  
-├── 📋 metadata.csv          # Product info + image URLs  
-└── 📦 requirements.txt      # Python dependencies
+├── 📜 README.md # Documentation
+├── 🐍 image_search.py # Main Streamlit app (fast loading)
+├── ⚙️ precompute_features.py # Offline feature generation
+├── 📋 metadata.csv # Product info + image URLs
+├── 📦 requirements.txt # Dependencies
+├── 🧠 features.npy # (Generated) Pre-computed vectors
+└── 🔗 image_urls.pkl # (Generated) Processed URLs
+
 ```
 
 ---
 
-##🖥️ Running the Project Locally
+## 🖥️ Running the Project Locally  
 
-Clone the repository:
+### 1️⃣ Clone the Repository 
+
 ```bash
-git clone [https://github.com/myselfshikhar/Visual-Product-Matcher.git](https://github.com/myselfshikhar/Visual-Product-Matcher.git)
+git clone https://github.com/myselfshikhar/Visual-Product-Matcher.git
 ```
 ```bash
 cd Visual-Product-Matcher
 ```
 
 
-Install the required packages:
+### 2️⃣ Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
-Run the Streamlit app:
+
+### 3️⃣ Run Pre-computation (One-Time Setup)
+```bash
+python precompute_features.py
+```
+(This may take several minutes depending on dataset size)
+
+### 4️⃣ Start the Streamlit App
 ```bash
 streamlit run image_search.py
 ```
+👉 Now open http://localhost:8501 in your browser.
+
+## 👨‍💻 Author
+Shikhar Katiyar
